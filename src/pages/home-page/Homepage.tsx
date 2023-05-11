@@ -7,22 +7,22 @@ function Homepage() {
         {
           id: 1,
           name: 'Slytherin',
-          imageUrl: 'https://w7.pngwing.com/pngs/160/467/png-transparent-harry-potter-hogwarts-crest-harry-potter-hogwarts-mystery-harry-potter-hogwarts-mystery-sorting-hat-fictional-universe-of-harry-potter-harry-potter-shield-helga-hufflepuff-potter.png'
+          imageUrl: '/logos/slytherin-logo.png'
         },
         {
           id: 2,
           name: 'Griffindor',
-          imageUrl: 'https://w7.pngwing.com/pngs/160/467/png-transparent-harry-potter-hogwarts-crest-harry-potter-hogwarts-mystery-harry-potter-hogwarts-mystery-sorting-hat-fictional-universe-of-harry-potter-harry-potter-shield-helga-hufflepuff-potter.png'
+          imageUrl: '/logos/gryfindor-logo.png'
         },
         {
           id: 3,
           name: 'Hufflepuff',
-          imageUrl: 'https://w7.pngwing.com/pngs/160/467/png-transparent-harry-potter-hogwarts-crest-harry-potter-hogwarts-mystery-harry-potter-hogwarts-mystery-sorting-hat-fictional-universe-of-harry-potter-harry-potter-shield-helga-hufflepuff-potter.png'
+          imageUrl: '/logos/hufflepuff-logo.png'
         },
         {
           id: 4,
           name: 'Ravenclaw',
-          imageUrl: 'https://w7.pngwing.com/pngs/160/467/png-transparent-harry-potter-hogwarts-crest-harry-potter-hogwarts-mystery-harry-potter-hogwarts-mystery-sorting-hat-fictional-universe-of-harry-potter-harry-potter-shield-helga-hufflepuff-potter.png'
+          imageUrl: '/logos/ravenclaw-logo.png'
         }
       ];
 
