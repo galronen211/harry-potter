@@ -1,5 +1,4 @@
-import './HouseSelector.css'
-import React, { useRef } from 'react'
+import './HouseSelector.css';
 import { Link } from 'react-router-dom';
 import { House } from '../../models/House';
 
