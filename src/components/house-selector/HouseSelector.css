@@ -1,0 +1,10 @@
+.house-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .house-banner {
+    width: 10rem;
+    height: fit-content;
+  }

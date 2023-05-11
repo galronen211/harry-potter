@@ -1,6 +1,6 @@
 import './Homepage.css'
 import React from 'react'
-import HouseSelector from '../../components/HouseSelector'
+import HouseSelector from '../../components/house-selector/HouseSelector'
 
 function Homepage() {
     const houses = [

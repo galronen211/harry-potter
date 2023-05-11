@@ -1,5 +1,6 @@
+import './HouseSelector.css'
 import React from 'react'
-import { House } from '../models/House';
+import { House } from '../../models/House';
 
 export type HouseSelectorProps = {
     houses: House[];
