@@ -1,36 +1,22 @@
 import './Homepage.css'
 import React from 'react'
-import HouseSelector from '../../components/house-selector/HouseSelector'
+import HouseSelector from '../../components/house-selector/HouseSelector';
+import { House } from '../../models/House';
+import { selectAllHouses } from '../../store/slices/housesSlice';
+import { useSelector } from 'react-redux';
+
+export type HomepageProps = {
+  houses: House[]
+}
 
 function Homepage() {
-    const houses = [
-        {
-          id: 1,
-          name: 'Slytherin',
-          imageUrl: '/logos/slytherin-logo.png'
-        },
-        {
-          id: 2,
-          name: 'Griffindor',
-          imageUrl: '/logos/gryfindor-logo.png'
-        },
-        {
-          id: 3,
-          name: 'Hufflepuff',
-          imageUrl: '/logos/hufflepuff-logo.png'
-        },
-        {
-          id: 4,
-          name: 'Ravenclaw',
-          imageUrl: '/logos/ravenclaw-logo.png'
-        }
-      ];
+  const houses: House[] = useSelector(selectAllHouses);
 
   return (
     <div className='body'>
-        <HouseSelector houses={houses}/>
+        <HouseSelector houses={houses} />
     </div>
   )
 }
 
-export default Homepage
+export default Homepage;

@@ -1,8 +1,24 @@
 import './SideNav.css';
 import React from 'react';
 import Drawer from '@mui/material/Drawer';
-import { Divider, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { House } from '../../models/House';
+import { Divider, List, ListItem, ListItemButton, ListItemText, ThemeProvider, createTheme } from '@mui/material';
+import { House } from '../../../models/House';
+
+const theme = createTheme({
+  components: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          background: 'black',
+          color: 'white',
+          padding: 20,
+          textAlign: 'center',
+          alignItems: 'center'
+        }
+      }
+    }
+  }
+});
 
 export type SideNavProps = {
   sideNavOpened: boolean;
@@ -26,18 +42,20 @@ function SideNav({sideNavOpened, setSideNavOpened, links}: SideNavProps) {
               <ListItemText>{linkObject.name}</ListItemText>
             </ListItemButton>
           </ListItem>
-        ) }
+        )}
       </List>
     </>
   )
 
   return (
-    <Drawer
-    anchor={anchor}
-    open={sideNavOpened}
-    onClose={() => setSideNavOpened(closeValue)}>
-      {drawerContent}
-    </Drawer>
+    <ThemeProvider theme={theme}>
+      <Drawer
+      anchor={anchor}
+      open={sideNavOpened}
+      onClose={() => setSideNavOpened(closeValue)}>
+        {drawerContent}
+      </Drawer>
+    </ThemeProvider>
   )
 }
 

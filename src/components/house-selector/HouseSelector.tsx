@@ -1,4 +1,4 @@
-import './HouseSelector.css';
+import './HouseSelector.css'
 import { Link } from 'react-router-dom';
 import { House } from '../../models/House';
 

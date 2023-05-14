@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Slytherin",
+        "imageUrl": "/logos/slytherin-logo.png"
+    },
+    {
+        "id": 2,
+        "name": "Griffindor",
+        "imageUrl": "/logos/gryfindor-logo.png"
+    },
+    {
+        "id": 3,
+        "name": "Hufflepuff",
+        "imageUrl": "/logos/hufflepuff-logo.png"
+    },
+    {
+        "id": 4,
+        "name": "Ravenclaw",
+        "imageUrl": "/logos/ravenclaw-logo.png"
+    }
+]
