@@ -18,8 +18,6 @@ function App() {
 
   const [sideNavOpened, setSideNavOpened] = useState(false);
 
-  let content;
-
   useEffect(() => {
     if (housesStatus === 'idle') {
       dispatch(fetchHouses());
@@ -32,7 +30,7 @@ function App() {
       <SideNav sideNavOpened={sideNavOpened} setSideNavOpened={setSideNavOpened} links={houses} />
       <Routes>
         <Route path='/' element={<Homepage />}></Route>
-        <Route path='/house' element={<Housepage />}></Route>
+        <Route path='/house/:houseId' element={<Housepage />}></Route>
       </Routes>
     </div>
   );

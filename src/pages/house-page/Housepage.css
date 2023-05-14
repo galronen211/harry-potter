@@ -1,0 +1,26 @@
+.house-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.house-background {
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    transform: translate(-50%, -50%);
+}
+
+.house-content {
+    position: relative;
+    color: white;
+}

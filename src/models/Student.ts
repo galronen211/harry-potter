@@ -1,3 +1,3 @@
 import { SelectionObject } from "./SelectionObject";
 
-export interface House extends SelectionObject {};
+export interface Student extends SelectionObject {};

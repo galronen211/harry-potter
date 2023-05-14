@@ -5,10 +5,6 @@ import { House } from '../../models/House';
 import { selectAllHouses } from '../../store/slices/housesSlice';
 import { useSelector } from 'react-redux';
 
-export type HomepageProps = {
-  houses: House[]
-}
-
 function Homepage() {
   const houses: House[] = useSelector(selectAllHouses);
 
