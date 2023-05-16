@@ -5,7 +5,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
 .house-background {
@@ -20,7 +20,12 @@
     transform: translate(-50%, -50%);
 }
 
-.house-content {
+.selector-container {
     position: relative;
-    color: white;
+    width: 75%;
+}
+
+.card-header-actions {
+    display: flex;
+    flex-direction: row;
 }

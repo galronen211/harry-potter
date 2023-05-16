@@ -1,0 +1,7 @@
+.popover > * {
+    padding: 1rem;
+}
+
+.MuiPopover-root > * > * {
+    margin-bottom: 1rem;
+}

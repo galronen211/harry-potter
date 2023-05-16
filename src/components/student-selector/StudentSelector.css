@@ -4,39 +4,24 @@
     align-items: center;
 }
 
+.selector-media {
+    height: 12rem;
+    width: 12rem;
+    border-radius: .5rem;
+}
 
-.student-link {
-    margin: 2%;
+.selector-title {
+    font-weight: bold;
+}
+
+.selector-wrapper {
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
-  
-.student-banner {
-    width: 15rem;
-    height: 15rem;
-    border: .5rem solid rgb(95, 95, 95);
-    border-radius: 100%;
-}
 
-.student-link:hover > .student-banner {
-    border-color: rgb(107 133 219);
-    box-shadow: 0px 0px 17px 4px rgb(46 73 165);
-    transition: all .6s ease;
-}
-
-.student-name {
-    color: rgb(95, 95, 95);
-    font-size: 2em;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.student-link:hover > .student-name {
-    text-shadow: 0 0 20px rgb(46 73 165);
-    color: rgb(107 133 219);
-    transition: all .6s ease;
-}
-
-a {
-    color: inherit;
-    text-decoration: inherit;
+.selector-wrapper:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.158);
 }

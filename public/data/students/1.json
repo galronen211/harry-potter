@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png"
+    },
+    {
+        "id": 2,
+        "houseId": 1,
+        "name": "Albus Severus Potter",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/e/e7/AlbusPotterWand.jpeg"
+    },
+    {
+        "id": 3,
+        "houseId": 1,
+        "name": "Sirius Black III",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/b/bc/OOTP_promo_front_closeup_Sirius_Black.jpg"
+    },
+    {
+        "id": 4,
+        "houseId": 1,
+        "name": "Adrian Pucey",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/1/13/Adrianpucey-HS.jpg"
+    },
+    {
+        "id": 5,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png"
+    },
+    {
+        "id": 6,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png"
+    },
+    {
+        "id": 7,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png"
+    },
+    {
+        "id": 8,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png"
+    },
+    {
+        "id": 9,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png"
+    }
+]

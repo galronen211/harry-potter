@@ -8,6 +8,13 @@ import SideNav from './components/common/side-nav/SideNav';
 import Housepage from './pages/house-page/Housepage';
 import { fetchHouses, getHousesError, getHousesStatus, selectAllHouses } from './store/slices/housesSlice';
 import { AppDispatch } from './store/store';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark'
+  }
+})
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -25,14 +32,15 @@ function App() {
   }, [housesStatus, dispatch]);
 
   return (
-    <div className='app'>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Header setSideNavOpened={setSideNavOpened} />
       <SideNav sideNavOpened={sideNavOpened} setSideNavOpened={setSideNavOpened} links={houses} />
       <Routes>
         <Route path='/' element={<Homepage />}></Route>
-        <Route path='/house/:houseId' element={<Housepage />}></Route>
+        <Route path='/house' element={<Housepage />}></Route>
       </Routes>
-    </div>
+    </ThemeProvider>
   );
 }
 
