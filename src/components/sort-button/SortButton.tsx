@@ -16,12 +16,17 @@ import SortIcon from "@mui/icons-material/Sort";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import React, { useState } from "react";
-import { SortByVaule, SortDirection } from "../../models/Sort";
+import { SortByValue, SortDirection } from "../../models/Sort";
 
-function FilterButton() {
+interface FilterButtonProps {
+  sortDirection: SortDirection;
+  sortValue: SortByValue;
+  setSortDirection: React.Dispatch<React.SetStateAction<SortDirection>>;
+  setSortValue: React.Dispatch<React.SetStateAction<SortByValue>>;
+}
+
+function FilterButton({sortDirection, sortValue, setSortDirection, setSortValue}: FilterButtonProps) {
   const [anchor, setAnchor] = useState<HTMLButtonElement | null>(null);
-  const [sortDirection, setSortDirection] = useState<SortDirection>("ASC");
-  const [sortValue, setSortValue] = useState<SortByVaule>("name");
 
   const reverseDirection = (direction: SortDirection) =>
     direction === "ASC" ? "DESC" : "ASC";
@@ -38,7 +43,7 @@ function FilterButton() {
     setSortDirection(event.target.value as SortDirection);
 
   const handleSortBySelection = (event: SelectChangeEvent) =>
-    setSortValue(event.target.value as SortByVaule);
+    setSortValue(event.target.value as SortByValue);
 
   const opened = Boolean(anchor);
 

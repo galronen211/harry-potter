@@ -2,10 +2,13 @@ import "./StudentSelector.css";
 import React from "react";
 import { Student } from "../../models/Student";
 import { Card, CardHeader, Grid, Pagination } from "@mui/material";
+import { SortByValue, SortDirection } from "../../models/Sort";
 
 interface StudentSelectorProps {
   students: Student[];
   filterText: string;
+  sortDirection: SortDirection;
+  sortValue: SortByValue;
 }
 
 const studentCard = (student: Student) => {
@@ -27,10 +30,33 @@ const studentCard = (student: Student) => {
   );
 };
 
-function StudentSelector({ students, filterText }: StudentSelectorProps) {
-  const studentGridList = students.map(
+const sort = (direction: SortDirection, sortByValue: SortByValue, array: Array<any>) => {
+    const sortCoefficient = direction === 'ASC' ? 1 : -1;
+
+    console.log(array.sort((first, second) => sortCoefficient * (first[sortByValue] - second[sortByValue])))
+    
+    return array.sort((first, second) => {
+        let compareValue = 0;
+
+        if (first[sortByValue] < second[sortByValue]) {
+            compareValue = -1;
+        } else if (first[sortByValue] > second[sortByValue]) {
+            compareValue = 1;
+        }
+
+        return sortCoefficient * compareValue;
+    });
+};
+
+const filter = (students: Student[], filterText: string) => {
+    return [...students].filter(student => student.name.toLowerCase().includes(filterText.toLowerCase()));
+}
+
+function StudentSelector({ students, filterText, sortDirection, sortValue }: StudentSelectorProps) {
+    const sortedStudents = sort(sortDirection, sortValue, filter(students, filterText));
+
+  const studentGridList = sortedStudents.map(
     (student) =>
-      student.name.toLowerCase().includes(filterText.toLowerCase()) &&
       studentCard(student)
   );
 

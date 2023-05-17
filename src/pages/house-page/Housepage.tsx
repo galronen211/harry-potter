@@ -21,12 +21,15 @@ import {
   TextField,
 } from "@mui/material";
 import FilterButton from "../../components/sort-button/SortButton";
-import CardSearch from "../../components/common/card-search/CardSearch";
+import CardSearch from "../../components/card-search/CardSearch";
+import { SortByValue, SortDirection } from "../../models/Sort";
 
 function Housepage() {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
-  const [filterText, setFilterText] = useState('');
+  const [filterText, setFilterText] = useState("");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("ASC");
+  const [sortValue, setSortValue] = useState<SortByValue>("name");
 
   const houseId = location.state;
 
@@ -52,7 +55,12 @@ function Housepage() {
           title={house?.name}
           action={
             <div className="card-header-actions">
-                <FilterButton />
+              <FilterButton
+                sortDirection={sortDirection}
+                sortValue={sortValue}
+                setSortDirection={setSortDirection}
+                setSortValue={setSortValue}
+              />
               <CardSearch
                 onChange={(event) => setFilterText(event.target.value)}
                 value={filterText}
@@ -61,7 +69,7 @@ function Housepage() {
           }
         ></CardHeader>
         <CardContent>
-          <StudentSelector students={students} filterText={filterText} />
+          <StudentSelector students={students} filterText={filterText} sortDirection={sortDirection} sortValue={sortValue} />
         </CardContent>
         <CardActions>
           <Pagination variant="outlined" color="primary" />

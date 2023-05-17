@@ -1,2 +1,2 @@
 export type SortDirection = 'ASC' | 'DESC';
-export type SortByVaule = 'name' | 'age';
+export type SortByValue = 'name' | 'age';

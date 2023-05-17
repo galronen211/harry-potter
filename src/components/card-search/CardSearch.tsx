@@ -2,8 +2,6 @@ import { styled, alpha } from "@mui/material/styles";
 import InputBase, { InputBaseProps } from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 
-interface SearchProps extends InputBaseProps {}
-
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -46,7 +44,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function CardSearch(props: SearchProps) {
+function CardSearch(props: InputBaseProps) {
   return (
     <Search>
       <SearchIconWrapper>
