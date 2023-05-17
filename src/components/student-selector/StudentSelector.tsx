@@ -30,35 +30,45 @@ const studentCard = (student: Student) => {
   );
 };
 
-const sort = (direction: SortDirection, sortByValue: SortByValue, array: Array<any>) => {
-    const sortCoefficient = direction === 'ASC' ? 1 : -1;
+const sort = (
+  direction: SortDirection,
+  sortByValue: SortByValue,
+  array: Array<any>
+) => {
+  const sortCoefficient = direction === "ASC" ? 1 : -1;
 
-    console.log(array.sort((first, second) => sortCoefficient * (first[sortByValue] - second[sortByValue])))
-    
-    return array.sort((first, second) => {
-        let compareValue = 0;
+  return array.sort((first, second) => {
+    let compareValue = 0;
 
-        if (first[sortByValue] < second[sortByValue]) {
-            compareValue = -1;
-        } else if (first[sortByValue] > second[sortByValue]) {
-            compareValue = 1;
-        }
+    if (first[sortByValue] < second[sortByValue]) {
+      compareValue = -1;
+    } else if (first[sortByValue] > second[sortByValue]) {
+      compareValue = 1;
+    }
 
-        return sortCoefficient * compareValue;
-    });
+    return sortCoefficient * compareValue;
+  });
 };
 
 const filter = (students: Student[], filterText: string) => {
-    return [...students].filter(student => student.name.toLowerCase().includes(filterText.toLowerCase()));
-}
-
-function StudentSelector({ students, filterText, sortDirection, sortValue }: StudentSelectorProps) {
-    const sortedStudents = sort(sortDirection, sortValue, filter(students, filterText));
-
-  const studentGridList = sortedStudents.map(
-    (student) =>
-      studentCard(student)
+  return [...students].filter((student) =>
+    student.name.toLowerCase().includes(filterText.toLowerCase())
   );
+};
+
+function StudentSelector({
+  students,
+  filterText,
+  sortDirection,
+  sortValue,
+}: StudentSelectorProps) {
+  const sortedStudents = sort(
+    sortDirection,
+    sortValue,
+    filter(students, filterText)
+  );
+
+  const studentGridList = sortedStudents.map((student) => studentCard(student));
 
   return (
     <div className="student-selector">
