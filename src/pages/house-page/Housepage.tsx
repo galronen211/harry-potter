@@ -5,10 +5,8 @@ import { selectAllHouses } from "../../store/slices/housesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import StudentSelector from "../../components/student-selector/StudentSelector";
 import { AppDispatch } from "../../store/store";
-import SortIcon from "@mui/icons-material/Sort";
 import {
   fetchStudents,
-  getStudentsStatus,
   selectAllStudents,
 } from "../../store/slices/studentsSlice";
 import {
@@ -16,13 +14,13 @@ import {
   CardActions,
   CardContent,
   CardHeader,
-  IconButton,
   Pagination,
-  TextField,
 } from "@mui/material";
 import FilterButton from "../../components/sort-button/SortButton";
 import CardSearch from "../../components/card-search/CardSearch";
 import { SortByValue, SortDirection } from "../../models/Sort";
+import { Student } from "../../models/Student";
+import StudentEditDialog from "../../components/student-edit-dialog/StudentEditDialog";
 
 function Housepage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,13 +28,13 @@ function Housepage() {
   const [filterText, setFilterText] = useState("");
   const [sortDirection, setSortDirection] = useState<SortDirection>("ASC");
   const [sortValue, setSortValue] = useState<SortByValue>("name");
+  const [selected, setSelected] = useState<Student>();
 
   const houseId = location.state;
 
   const students = useSelector(selectAllStudents);
-  const house = useSelector(selectAllHouses).find(
-    (house) => house.id === houseId
-  );
+  const houses = useSelector(selectAllHouses);
+  const house = houses.find((house) => house.id === houseId);
 
   useEffect(() => {
     dispatch(fetchStudents(houseId));
@@ -69,12 +67,19 @@ function Housepage() {
           }
         ></CardHeader>
         <CardContent>
-          <StudentSelector students={students} filterText={filterText} sortDirection={sortDirection} sortValue={sortValue} />
+          <StudentSelector
+            students={students}
+            filterText={filterText}
+            sortDirection={sortDirection}
+            sortValue={sortValue}
+            setSelected={setSelected}
+          />
         </CardContent>
         <CardActions>
           <Pagination variant="outlined" color="primary" />
         </CardActions>
       </Card>
+      <StudentEditDialog student={selected} setSelectedStudent={setSelected} houses={houses} />
     </div>
   );
 }

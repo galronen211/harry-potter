@@ -9,9 +9,10 @@ interface StudentSelectorProps {
   filterText: string;
   sortDirection: SortDirection;
   sortValue: SortByValue;
+  setSelected: React.Dispatch<React.SetStateAction<Student | undefined>>;
 }
 
-const studentCard = (student: Student) => {
+const studentCard = (student: Student, onClick: React.Dispatch<React.SetStateAction<Student | undefined>>) => {
   return (
     <Grid
       key={student.id}
@@ -21,7 +22,7 @@ const studentCard = (student: Student) => {
       flexDirection="column"
       alignItems="center"
     >
-      <div className="selector-wrapper">
+      <div className="selector-wrapper" onClick={() => onClick(student)}>
         <img src={student.imageUrl} alt="" className="selector-media" />
         <span className="selector-title">{student.name}</span>
         <span className="selector-subtitle">age: {student.age}</span>
@@ -61,6 +62,7 @@ function StudentSelector({
   filterText,
   sortDirection,
   sortValue,
+  setSelected
 }: StudentSelectorProps) {
   const sortedStudents = sort(
     sortDirection,
@@ -68,7 +70,7 @@ function StudentSelector({
     filter(students, filterText)
   );
 
-  const studentGridList = sortedStudents.map((student) => studentCard(student));
+  const studentGridList = sortedStudents.map((student) => studentCard(student, setSelected));
 
   return (
     <div className="student-selector">

@@ -4,6 +4,8 @@
         "houseId": 2,
         "name": "Harry Potter",
         "age": 16,
-        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/9/97/Harry_Potter.jpg"
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/9/97/Harry_Potter.jpg",
+        "admissionDate": "20/10/2012",
+        "gender": "male"
     }
 ]

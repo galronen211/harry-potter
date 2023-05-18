@@ -4,6 +4,8 @@
         "houseId": 3,
         "name": "Helga Hufflepuff",
         "age": 52,
-        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/d/d6/PM_HelgaHufflepuff_Founders.jpg"
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/d/d6/PM_HelgaHufflepuff_Founders.jpg",
+        "admissionDate": "20/10/2012",
+        "gender": "male"
     }
 ]
