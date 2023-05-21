@@ -10,11 +10,13 @@ import {
   selectAllStudents,
 } from "../../store/slices/studentsSlice";
 import {
+  Alert,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   Pagination,
+  Snackbar,
 } from "@mui/material";
 import FilterButton from "../../components/sort-button/SortButton";
 import CardSearch from "../../components/card-search/CardSearch";
@@ -29,6 +31,7 @@ function Housepage() {
   const [sortDirection, setSortDirection] = useState<SortDirection>("ASC");
   const [sortValue, setSortValue] = useState<SortByValue>("name");
   const [selected, setSelected] = useState<Student>();
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const houseId = location.state;
 
@@ -39,6 +42,14 @@ function Housepage() {
   useEffect(() => {
     dispatch(fetchStudents(houseId));
   }, [houseId, dispatch]);
+
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarOpen(false);
+  }
 
   return (
     <div className="house-wrapper">
@@ -79,7 +90,12 @@ function Housepage() {
           <Pagination variant="outlined" color="primary" />
         </CardActions>
       </Card>
-      <StudentEditDialog student={selected} setSelectedStudent={setSelected} houses={houses} />
+      <StudentEditDialog student={selected} setSelectedStudent={setSelected} houses={houses} onSuccess={setSnackbarOpen} />
+      <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Student saved successfully!
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

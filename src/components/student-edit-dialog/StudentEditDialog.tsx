@@ -20,14 +20,20 @@ interface StudentEditDialogProps {
     student: Student | undefined;
     setSelectedStudent: React.Dispatch<React.SetStateAction<Student | undefined>>;
     houses: House[];
+    onSuccess: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function StudentEditDialog({student, setSelectedStudent, houses}: StudentEditDialogProps) {
+function StudentEditDialog({student, setSelectedStudent, houses, onSuccess}: StudentEditDialogProps) {
 
     const opened = student !== undefined;
 
-    const handleClose = () => {
-        setSelectedStudent(undefined);
+    const handleClose = (event?: {}, reason?: string) => {
+      if (reason === 'backdropClick') {
+        return;
+      }
+
+      setSelectedStudent(undefined);
+      onSuccess(true);
     }
 
   return (
@@ -39,9 +45,9 @@ function StudentEditDialog({student, setSelectedStudent, houses}: StudentEditDia
           src={student?.imageUrl}
           sx={{ height: '10rem', width: '10rem' }}
         />
-        <DialogContentText>
-          <StudentEditForm student={student} houses={houses} />
-        </DialogContentText>
+        <DialogContent>
+          <StudentEditForm student={student} houses={houses} onValidate={handleClose} />
+        </DialogContent>
       </DialogContent>
     </Dialog>
   );
