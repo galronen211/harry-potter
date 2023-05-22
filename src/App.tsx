@@ -8,14 +8,12 @@ import SideNav from "./components/common/side-nav/SideNav";
 import Housepage from "./pages/house-page/Housepage";
 import {
   fetchHouses,
-  getHousesError,
   getHousesStatus,
   selectAllHouses,
 } from "./store/slices/housesSlice";
 import { AppDispatch } from "./store/store";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import Spellpage from "./pages/spell-page/Spellpage";
 
 const theme = createTheme({
   palette: {
@@ -28,7 +26,6 @@ function App() {
 
   const houses = useSelector(selectAllHouses);
   const housesStatus = useSelector(getHousesStatus);
-  const error = useSelector(getHousesError);
 
   const [sideNavOpened, setSideNavOpened] = useState(false);
 
@@ -50,6 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/house" element={<Housepage />}></Route>
+        <Route path="/spell" element={<Spellpage />}></Route>
       </Routes>
     </ThemeProvider>
   );

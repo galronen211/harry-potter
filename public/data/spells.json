@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "name": "Expelliarmus"
+    },
+    {
+        "id": 1,
+        "name": "Alohomora"
+    },
+    {
+        "id": 2,
+        "name": "Petrificus Totalus"
+    },
+    {
+        "id": 3,
+        "name": "Accio"
+    },
+    {
+        "id": 4,
+        "name": "Patronus"
+    },
+    {
+        "id": 5,
+        "name": "Avada Kedavra"
+    }
+]
