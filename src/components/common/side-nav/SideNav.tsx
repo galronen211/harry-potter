@@ -1,8 +1,9 @@
 import './SideNav.css';
 import React from 'react';
 import Drawer from '@mui/material/Drawer';
-import { Divider, List, ListItem, ListItemButton, ListItemText, ThemeProvider, createTheme } from '@mui/material';
+import { Button, Divider, List, ListItem, ListItemButton, ListItemText, ThemeProvider, createTheme } from '@mui/material';
 import { House } from '../../../models/House';
+import AutoFixHighOutlinedIcon from '@mui/icons-material/AutoFixHighOutlined';
 
 const theme = createTheme({
   components: {
@@ -44,6 +45,11 @@ function SideNav({sideNavOpened, setSideNavOpened, links}: SideNavProps) {
           </ListItem>
         )}
       </List>
+      <List style={{position: 'absolute', bottom: '1rem'}}>
+          <Button variant='contained' startIcon={<AutoFixHighOutlinedIcon />}>
+            Create spell
+            </Button>
+        </List>
     </>
   )
 

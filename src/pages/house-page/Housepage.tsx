@@ -1,6 +1,6 @@
 import "./Housepage.css";
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { selectAllHouses } from "../../store/slices/housesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import StudentSelector from "../../components/student-selector/StudentSelector";
@@ -11,6 +11,7 @@ import {
 } from "../../store/slices/studentsSlice";
 import {
   Alert,
+  Avatar,
   Card,
   CardActions,
   CardContent,
@@ -21,8 +22,9 @@ import {
 import FilterButton from "../../components/sort-button/SortButton";
 import CardSearch from "../../components/card-search/CardSearch";
 import { SortByValue, SortDirection } from "../../models/Sort";
-import { Student } from "../../models/Student";
-import StudentEditDialog from "../../components/student-edit-dialog/StudentEditDialog";
+import { Student, StudentGender } from "../../models/Student";
+import StudentEditForm from "../../components/forms/student/StudentEditForm";
+import FormDialog from "../../components/form-dialog/FormDialog";
 
 function Housepage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,8 +32,9 @@ function Housepage() {
   const [filterText, setFilterText] = useState("");
   const [sortDirection, setSortDirection] = useState<SortDirection>("ASC");
   const [sortValue, setSortValue] = useState<SortByValue>("name");
-  const [selected, setSelected] = useState<Student>();
+  const [selectedStudent, setSelectedStudent] = useState<Student>();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [dialogOpened, setDialogOpened] = useState(false);
 
   const houseId = location.state;
 
@@ -43,13 +46,30 @@ function Housepage() {
     dispatch(fetchStudents(houseId));
   }, [houseId, dispatch]);
 
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
       return;
     }
 
     setSnackbarOpen(false);
-  }
+  };
+
+  const handleCancel = () => {
+    setDialogOpened(false);
+  };
+
+  const handleSubmit = () => {
+    setDialogOpened(false);
+    setSnackbarOpen(true);
+  };
+
+  const handleSelection = (student: Student) => {
+    setSelectedStudent(student);
+    setDialogOpened(true);
+  };
 
   return (
     <div className="house-wrapper">
@@ -59,6 +79,7 @@ function Housepage() {
         alt=""
         draggable="false"
       />
+
       <Card className="selector-container">
         <CardHeader
           title={house?.name}
@@ -76,23 +97,43 @@ function Housepage() {
               />
             </div>
           }
-        ></CardHeader>
+        />
         <CardContent>
           <StudentSelector
             students={students}
             filterText={filterText}
             sortDirection={sortDirection}
             sortValue={sortValue}
-            setSelected={setSelected}
+            onSelect={handleSelection}
           />
         </CardContent>
         <CardActions>
           <Pagination variant="outlined" color="primary" />
         </CardActions>
       </Card>
-      <StudentEditDialog student={selected} setSelectedStudent={setSelected} houses={houses} onSuccess={setSnackbarOpen} />
-      <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+      <FormDialog
+        title="Edit Student Information"
+        open={dialogOpened}
+        onCancel={handleCancel}
+      >
+        <Avatar
+          alt="Avatar"
+          src={selectedStudent?.imageUrl}
+          sx={{ height: "10rem", width: "10rem" }}
+        />
+        <StudentEditForm
+          student={selectedStudent}
+          houses={houses}
+          onValidate={handleSubmit}
+          onCancel={handleCancel}
+        />
+      </FormDialog>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
           Student saved successfully!
         </Alert>
       </Snackbar>

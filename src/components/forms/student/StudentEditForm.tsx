@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Student, StudentGender } from "../../../models/Student";
 import {
   Button,
+  DialogActions,
   FormControl,
   FormGroup,
   FormHelperText,
@@ -22,6 +23,7 @@ interface FormProps {
   student: Student | undefined;
   houses: House[];
   onValidate: () => void;
+  onCancel: () => void;
 }
 
 interface FormValues {
@@ -43,7 +45,7 @@ const validationSchema = yup.object({
   gender: yup.string().required("Gender is required"),
 });
 
-function StudentEditForm({ student, houses, onValidate }: FormProps) {
+function StudentEditForm({ student, houses, onValidate, onCancel }: FormProps) {
   const initialValues: FormValues = {
     name: student?.name,
     age: student?.age,
@@ -64,8 +66,16 @@ function StudentEditForm({ student, houses, onValidate }: FormProps) {
     </MenuItem>
   ));
 
+  const handleSubmit = (e?: React.FormEvent<HTMLFormElement> | undefined) => {
+    formik.handleSubmit(e);
+
+    if (formik.isValid) {
+      onValidate();
+    }
+  };
+
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <TextField
         fullWidth
         label="Name"
@@ -135,7 +145,10 @@ function StudentEditForm({ student, houses, onValidate }: FormProps) {
         </Select>
       </FormControl>
 
-      <Button type="submit">Save</Button>
+      <DialogActions>
+        <Button onClick={onCancel}>Cancel</Button>
+        <Button type="submit">Save</Button>
+      </DialogActions>
     </form>
   );
 }

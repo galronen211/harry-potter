@@ -1,7 +1,6 @@
 import "./StudentSelector.css";
-import React from "react";
 import { Student } from "../../models/Student";
-import { Card, CardHeader, Grid, Pagination } from "@mui/material";
+import { Grid } from "@mui/material";
 import { SortByValue, SortDirection } from "../../models/Sort";
 
 interface StudentSelectorProps {
@@ -9,10 +8,10 @@ interface StudentSelectorProps {
   filterText: string;
   sortDirection: SortDirection;
   sortValue: SortByValue;
-  setSelected: React.Dispatch<React.SetStateAction<Student | undefined>>;
+  onSelect: (student: Student) => void;
 }
 
-const studentCard = (student: Student, onClick: React.Dispatch<React.SetStateAction<Student | undefined>>) => {
+const studentCard = (student: Student, onSelect: (student: Student) => void) => {
   return (
     <Grid
       key={student.id}
@@ -22,7 +21,7 @@ const studentCard = (student: Student, onClick: React.Dispatch<React.SetStateAct
       flexDirection="column"
       alignItems="center"
     >
-      <div className="selector-wrapper" onClick={() => onClick(student)}>
+      <div className="selector-wrapper" onClick={() => onSelect(student)}>
         <img src={student.imageUrl} alt="" className="selector-media" />
         <span className="selector-title">{student.name}</span>
         <span className="selector-subtitle">age: {student.age}</span>
@@ -62,7 +61,7 @@ function StudentSelector({
   filterText,
   sortDirection,
   sortValue,
-  setSelected
+  onSelect
 }: StudentSelectorProps) {
   const sortedStudents = sort(
     sortDirection,
@@ -70,7 +69,7 @@ function StudentSelector({
     filter(students, filterText)
   );
 
-  const studentGridList = sortedStudents.map((student) => studentCard(student, setSelected));
+  const studentGridList = sortedStudents.map((student) => studentCard(student, onSelect));
 
   return (
     <div className="student-selector">
