@@ -1,26 +1,314 @@
 [
-    {
-        "id": 0,
-        "name": "Expelliarmus"
-    },
-    {
+  {
+    "id": 0,
+    "name": "Expelliarmus",
+    "imageUrl": "",
+    "users": [
+      {
         "id": 1,
-        "name": "Alohomora"
-    },
-    {
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
         "id": 2,
-        "name": "Petrificus Totalus"
-    },
-    {
+        "houseId": 1,
+        "name": "Albus Severus Potter",
+        "age": 17,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/e/e7/AlbusPotterWand.jpeg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
         "id": 3,
-        "name": "Accio"
-    },
-    {
+        "houseId": 1,
+        "name": "Sirius Black III",
+        "age": 18,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/b/bc/OOTP_promo_front_closeup_Sirius_Black.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
         "id": 4,
-        "name": "Patronus"
-    },
-    {
+        "houseId": 1,
+        "name": "Adrian Pucey",
+        "age": 19,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/1/13/Adrianpucey-HS.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
         "id": 5,
-        "name": "Avada Kedavra"
-    }
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 20,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Alohomora",
+    "imageUrl": "",
+    "users": [
+      {
+        "id": 1,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 2,
+        "houseId": 1,
+        "name": "Albus Severus Potter",
+        "age": 17,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/e/e7/AlbusPotterWand.jpeg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 3,
+        "houseId": 1,
+        "name": "Sirius Black III",
+        "age": 18,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/b/bc/OOTP_promo_front_closeup_Sirius_Black.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 4,
+        "houseId": 1,
+        "name": "Adrian Pucey",
+        "age": 19,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/1/13/Adrianpucey-HS.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 5,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 20,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Petrificus Totalus",
+    "imageUrl": "",
+    "users": [
+      {
+        "id": 1,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 2,
+        "houseId": 1,
+        "name": "Albus Severus Potter",
+        "age": 17,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/e/e7/AlbusPotterWand.jpeg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 3,
+        "houseId": 1,
+        "name": "Sirius Black III",
+        "age": 18,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/b/bc/OOTP_promo_front_closeup_Sirius_Black.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 4,
+        "houseId": 1,
+        "name": "Adrian Pucey",
+        "age": 19,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/1/13/Adrianpucey-HS.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 5,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 20,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Accio",
+    "imageUrl": "",
+    "users": [
+      {
+        "id": 1,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 2,
+        "houseId": 1,
+        "name": "Albus Severus Potter",
+        "age": 17,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/e/e7/AlbusPotterWand.jpeg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 3,
+        "houseId": 1,
+        "name": "Sirius Black III",
+        "age": 18,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/b/bc/OOTP_promo_front_closeup_Sirius_Black.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 4,
+        "houseId": 1,
+        "name": "Adrian Pucey",
+        "age": 19,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/1/13/Adrianpucey-HS.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 5,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 20,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Patronus",
+    "imageUrl": "",
+    "users": [
+      {
+        "id": 1,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 2,
+        "houseId": 1,
+        "name": "Albus Severus Potter",
+        "age": 17,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/e/e7/AlbusPotterWand.jpeg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 3,
+        "houseId": 1,
+        "name": "Sirius Black III",
+        "age": 18,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/b/bc/OOTP_promo_front_closeup_Sirius_Black.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 4,
+        "houseId": 1,
+        "name": "Adrian Pucey",
+        "age": 19,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/1/13/Adrianpucey-HS.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 5,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 20,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Avada Kedavra",
+    "imageUrl": "",
+    "users": [
+      {
+        "id": 1,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 16,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 2,
+        "houseId": 1,
+        "name": "Albus Severus Potter",
+        "age": 17,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/e/e7/AlbusPotterWand.jpeg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 3,
+        "houseId": 1,
+        "name": "Sirius Black III",
+        "age": 18,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/b/bc/OOTP_promo_front_closeup_Sirius_Black.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 4,
+        "houseId": 1,
+        "name": "Adrian Pucey",
+        "age": 19,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/1/13/Adrianpucey-HS.jpg",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      },
+      {
+        "id": 5,
+        "houseId": 1,
+        "name": "Draco Malfoy",
+        "age": 20,
+        "imageUrl": "https://static.wikia.nocookie.net/harrypotter/images/7/7e/Draco_Malfoy_TDH.png",
+        "admissionDate": "2019-01-25",
+        "gender": "male"
+      }
+    ]
+  }
 ]

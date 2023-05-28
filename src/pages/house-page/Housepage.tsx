@@ -25,6 +25,7 @@ import { SortByValue, SortDirection } from "../../models/Sort";
 import { Student, StudentGender } from "../../models/Student";
 import StudentEditForm from "../../components/forms/student/StudentEditForm";
 import FormDialog from "../../components/form-dialog/FormDialog";
+import { House } from "../../models/House";
 
 function Housepage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -40,7 +41,7 @@ function Housepage() {
 
   const students = useSelector(selectAllStudents);
   const houses = useSelector(selectAllHouses);
-  const house = houses.find((house) => house.id === houseId);
+  const house = houses.find((house: House) => house.id === houseId);
 
   useEffect(() => {
     dispatch(fetchStudents(houseId));
