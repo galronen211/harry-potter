@@ -14,6 +14,7 @@ import {
 import { AppDispatch } from "./store/store";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Spellpage from "./pages/spell-page/Spellpage";
+import { SnackbarProvider } from "notistack";
 
 const theme = createTheme({
   palette: {
@@ -37,18 +38,20 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Header setSideNavOpened={setSideNavOpened} />
-      <SideNav
-        sideNavOpened={sideNavOpened}
-        setSideNavOpened={setSideNavOpened}
-        links={houses}
-      />
-      <Routes>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route path="/house" element={<Housepage />}></Route>
-        <Route path="/spell" element={<Spellpage />}></Route>
-      </Routes>
+      <SnackbarProvider maxSnack={3}>
+        <CssBaseline />
+        <Header setSideNavOpened={setSideNavOpened} />
+        <SideNav
+          sideNavOpened={sideNavOpened}
+          setSideNavOpened={setSideNavOpened}
+          links={houses}
+        />
+        <Routes>
+          <Route path="/" element={<Homepage />}></Route>
+          <Route path="/house" element={<Housepage />}></Route>
+          <Route path="/spell" element={<Spellpage />}></Route>
+        </Routes>
+      </SnackbarProvider>
     </ThemeProvider>
   );
 }

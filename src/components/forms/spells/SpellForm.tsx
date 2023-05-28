@@ -19,7 +19,7 @@ const validationSchema = yup.object({
   name: yup.string().required("Name is required"),
 });
 
-function SpellDialog({ spell, onValidate, onCancel }: FormProps) {
+function SpellForm({ spell, onValidate, onCancel }: FormProps) {
   const initialValues: FormValues = {
     imageUrl: spell ? spell.imageUrl : "",
     name: spell ? spell.name : "",
@@ -28,19 +28,12 @@ function SpellDialog({ spell, onValidate, onCancel }: FormProps) {
   const formik = useFormik({
     initialValues,
     validationSchema,
+    isInitialValid: false,
     onSubmit: () => onValidate(),
   });
 
-  const handleSubmit = (e?: React.FormEvent<HTMLFormElement> | undefined) => {
-    formik.handleSubmit(e);
-
-    if (formik.isValid) {
-      onValidate();
-    }
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={formik.handleSubmit}>
       <TextField
         fullWidth
         label="Image URL"
@@ -70,4 +63,4 @@ function SpellDialog({ spell, onValidate, onCancel }: FormProps) {
   );
 }
 
-export default SpellDialog;
+export default SpellForm;
